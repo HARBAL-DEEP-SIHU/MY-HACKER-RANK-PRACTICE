@@ -1,0 +1,11 @@
+import re
+n = int(input())
+
+def s(match):
+  if match.group(1) == '&&':
+    return 'and'
+  else:i
+    return 'or'
+for i in range(n):
+    
+  print(re.sub(r"(?<= )(\|\||&&)(?= )",s,input()))
