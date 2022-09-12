@@ -477,6 +477,75 @@ def insertNodeAtTail(head, data):
     temp.next = node  
   return head   
 
+**Insert a node at the head of a linked list
+
+def insertNodeAtHead(llist, data):
+  node = SinglyLinkedListNode(data)
+  if llist != None:
+    node.next=llist
+  return node 
+  
+**Insert a node at a specific position in a linked list  
+
+def insertNodeAtPosition(head, data, position):
+  node = SinglyLinkedListNode(data)
+  if head ==None:
+    head = node
+  else:
+    temp = head 
+    count =1
+    while temp!=None and count < position:
+      temp = temp.next
+      count+= 1
+    node.next = temp.next 
+    temp.next = node
+  return head    
+      
+** Delete a Node
+def deleteNode(head, position):
+  if position == 0:
+    head = head.next 
+  else:
+    temp =head
+    count = 1
+    while temp !=None and count<position:
+      temp = temp.next 
+      count+=1
+    temp.next = temp.next.next
+  return head      
+  
+**Print in Reverse
+
+def reversePrint(head):
+    if head is None:
+        return
+    else:
+        out = []
+        node = head
+        
+        while node != None:
+            out.append(node.data)
+            node = node.next
+            
+        print("\n".join(map(str, out[::-1])))
+
+
+**Reverse a linked list
+
+def reverse(head):
+  prev = None
+  cur = head 
+  nxt = head.next
+  while cur!=None:
+    nxt = cur.next
+    cur.next = prev
+    prev=cur
+    cur =nxt
+  head = prev
+  return head
+  
+
+
 
 
 
