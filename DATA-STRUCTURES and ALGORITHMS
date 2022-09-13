@@ -579,6 +579,33 @@ def mergeLists(head1, head2):
     temp = head2
     temp.next = mergeLists(head2.next, head1)  
   return temp  
+  
+**Get Node Value
+
+def getNode(head, positionFromTail):
+  ptr1 =head
+  ptr2 = head
+  for i in range(positionFromTail):
+    ptr1 = ptr1.next
+    
+  while ptr1.next != None:
+    ptr1 = ptr1.next
+    ptr2 = ptr2.next
+  return ptr2.data    
+  
+**Delete duplicate-value nodes from a sorted linked list
+
+def removeDuplicates(headd):
+  head=headd
+  while head.next:
+    if head.data == head.next.data:
+      head.next= head.next.next
+    else:
+      head = head.next  
+      
+  return headd
+  
+
       
       
  
