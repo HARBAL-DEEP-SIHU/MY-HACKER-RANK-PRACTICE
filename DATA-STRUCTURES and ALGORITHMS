@@ -661,6 +661,15 @@ def sortedInsert(head, data):
       cur.prev = node
   return head  
   
+** Reverse a doubly linked list
+
+def reverse(head):
+  while head.next!= None:
+    head.next, head.prev, head = head.prev, head.next, head.next
+  head.next, head.prev = head.prev , None
+  return head  
+  
+ 
   
   
 
