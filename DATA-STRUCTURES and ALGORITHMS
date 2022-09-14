@@ -720,6 +720,40 @@ def topView(root):
   for key in sorted(d):
     print(d[key][0],end = ' ')
     
+ ** Tree: Level Order Traversal
+ from collections import deque
+def levelOrder(root):
+  q = deque([root])
+  while len(q):
+    root = q.popleft()
+    print(root,end = ' ')
+    if root.left: q.append(root.left)
+    if root.right:q.append(root.right)
+    
+**Binary Search Tree : Insertion
+
+    def insert(self, val):
+      newnode = Node(val)
+      if self.root is None:
+        self.root = newnode
+        return self
+      cur = self.root
+      while cur:
+        if val < cur.info:
+          if cur.left is None:
+            cur.left = newnode
+            return self
+          cur = cur.left
+        else:
+          if cur.right is None:
+            cur.right = newnode
+            return self
+          cur = cur.right
+	 
+	 
+	 
+	 
+	  
     
   
   
