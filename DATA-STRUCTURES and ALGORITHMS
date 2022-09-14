@@ -749,7 +749,103 @@ def levelOrder(root):
             cur.right = newnode
             return self
           cur = cur.right
-	 
+	  
+	  
+**Binary Search Tree : Lowest Common Ancestor
+
+def lca(root, v1, v2):
+  if v1>v2:
+    v1,v2 = v2, v1
+  while True:
+    if v1<root.info and v2<root.info:
+      root = root.left
+    elif v1>root.info and v2>root.info:
+      root = root.right
+    else:
+      return root
+  
+ **QHEAP1
+ 
+ from heapq import heappush, heappop
+heap = []
+lookup = set()
+for i in range(int(input())):
+  t = list(map(int,input().split()))
+  
+  if t[0] == 1:
+    heappush(heap, t[1])
+    lookup.add(t[1])
+  elif t[0] == 2:
+    lookup.discard(t[1])
+    
+  else: 
+    while heap[0] not in lookup:
+      heappop(heap)
+    print (heap[0])
+
+
+**Maximum Element
+
+stack = []
+for _ in range(int(input())):
+  q = list(map(int,input().split()))
+  
+  
+  if q[0] ==1:
+    if stack:
+      stack.append(max(stack[-1],q[1]))
+    else:
+      stack.append(q[1])
+  elif q[0] ==2:
+    stack.pop()
+  else:
+    print(stack[-1])
+  
+ 
+**Jesse and Cookies
+
+def cookies(k, a):
+  heapify(a)
+  count = 0
+  while True:
+    x = heappop(a)
+    if x>=k:
+      return count
+    if a:
+      y = heappop(a)
+      s = x +y*2
+      heappush(a,s)
+      count +=1
+    else:
+      return -1  
+      
+  **Equal Stacks   
+  
+  def equalStacks(h1, h2, h3):
+  h1 = h1[::-1]
+  h2 = h2[::-1]
+  h3=h3[::-1]
+  
+  sum1 = sum(h1)
+  sum2 = sum(h2)
+  sum3 = sum(h3)
+  
+  while True:
+    minheight = min(sum1, sum2,sum3)
+    if minheight ==0:
+      return 0
+    else:
+      if minheight<sum1:
+        sum1 -= h1.pop()
+      elif minheight<sum2:
+        sum2 -= h2.pop()
+      elif minheight<sum3:
+        sum3 -= h3.pop()
+      else:
+        if sum1 == sum2 ==sum3:
+          return sum1
+  
+	    
 	 
 	 
 	 
