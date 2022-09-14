@@ -669,7 +669,58 @@ def reverse(head):
   head.next, head.prev = head.prev , None
   return head  
   
+**Tree: Preorder Traversal
+
+def preOrder(root):
+  if root:
+    print(root.info,end = ' ')
+    preOrder(root.left)
+    preOrder(root.right)
+    
+ **Tree: Postorder Traversal
  
+ def postOrder(root):
+  if root:
+ 
+    postOrder(root.left)
+    postOrder(root.right)
+    print(root.info, end = " ")
+    
+ **Tree: Inorder Traversal
+ 
+ def inOrder(root):
+  if root:
+    
+    inOrder(root.left)
+    print(root.info , end = ' ')
+    inOrder(root.right)
+
+
+**Tree: Height of a Binary Tree
+
+def height(root):
+  if root == None:
+    return -1
+  else:
+    return 1 + max(height(root.left), height(root.right))
+
+**Tree : Top View
+
+def topView(root):
+  d = {}
+  def traverse(root, key, level):
+    if root:
+      if key not in d:
+        d[key]=[root,level]
+      elif d[key][1]>level:
+        d[key]=[root,level]
+      traverse(root.left , key -1 , level +1)  
+      traverse(root.right, key +1, level +1)
+  traverse(root, 0, 0)
+  for key in sorted(d):
+    print(d[key][0],end = ' ')
+    
+    
   
   
 
