@@ -845,6 +845,32 @@ def cookies(k, a):
         if sum1 == sum2 ==sum3:
           return sum1
   
+  **Grading Students
+  
+  def gradingStudents(grades):
+  g= []
+  for i in grades:
+    if i>=38:
+      m = i%5
+      if m >=3:
+        i += (5-m)
+    g.append(i)
+  return g  
+  
+ **Apple and Orange
+ 
+ def countApplesAndOranges(s, t, a, b, apples, oranges):
+  tapples= toranges = 0
+  for i in range(len(apples)):
+    if s<= a+apples[i] <=t:
+      tapples+=1
+  for i in range(len(oranges)):
+    if s<= b+ oranges[i]<=t:
+      toranges+=1
+  print(tapples)
+  print(toranges)
+  
+
 	    
 	 
 	 
