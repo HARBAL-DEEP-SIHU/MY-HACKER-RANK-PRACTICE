@@ -898,6 +898,40 @@ def getTotalX(a, b):
       s+=1
   return s
   
+** Breaking the Records
+
+def breakingRecords(scores):
+  minimum = scores[0]
+  maximum = scores[0]
+  min_count = 0
+  max_count = 0
+  for i in range(len(scores)):
+    if minimum > scores[i]:
+      minimum = scores[i]
+      min_count +=1
+    if maximum < scores[i]:
+      maximum = scores[i]
+      max_count +=1
+  
+  return max_count,min_count
+  
+  
+ **Subarray Division
+ 
+ def birthday(s, d_sum, m_num):
+  count = 0
+  total = sum(s[:m_num])
+  
+  if total == d_sum:
+    count +=1
+  for i in range(m_num, len(s)):
+    total += s[i]
+    total -= s[i-m_num] 
+    if total == d:
+      count+=1
+
+  return count
+  
   
   
 
