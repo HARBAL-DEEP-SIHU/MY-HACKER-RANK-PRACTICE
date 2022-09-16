@@ -932,6 +932,27 @@ def breakingRecords(scores):
 
   return count
   
+**Divisible Sum Pairs
+
+def divisibleSumPairs(n, k, ar):
+  i = 0
+  count = 0
+  for i in range(n):
+    for j in range(i+1, n):
+      if (ar[i]+ar[j])%k ==0:
+        count +=1
+  return count
+
+**Migratory Birds
+
+def migratoryBirds(arr):
+  l = [0] * len(arr)
+  for i in range(len(arr)):
+    l[arr[i]]+=1
+  return l.index(max(l))
+  
+  
+  
   
   
 
