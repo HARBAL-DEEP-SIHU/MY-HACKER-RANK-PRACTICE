@@ -951,6 +951,27 @@ def migratoryBirds(arr):
     l[arr[i]]+=1
   return l.index(max(l))
   
+ ** Day of the Programmer
+ 
+ def dayOfProgrammer(year):
+  if (year<1917 and year%4==0) or  (year>1918 and (year% 400 ==0 or (year %4==0 and year%100!=0))):
+    
+    return "12.09.%s" %year
+  elif year == 1918:
+    return '26.09.1918'
+  else :
+    return '13.09.%s' %year 
+    
+    
+  ** Bill Division
+  def bonAppetit(bill, k, b):
+    sum_b = sum(bill)
+    sum_anna = (sum_b - bill[k])//2
+    if sum_anna == b:
+      print('Bon Appetit')
+    else:
+      print (b - sum_anna)
+  
   
   
   
