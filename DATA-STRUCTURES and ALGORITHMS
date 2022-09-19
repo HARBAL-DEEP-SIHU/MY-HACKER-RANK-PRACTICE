@@ -1070,6 +1070,52 @@ def climbingLeaderboard(ranked, player):
   return result
 
 
+**The Hurdle Race
+
+def hurdleRace(k, height):
+  result = []
+  for i in height:
+    diff = (i-k)
+    if i-k>0:
+      result.append(diff)
+    else:
+      result.append(0)
+  return max(result)
+    
+   
+**Designer PDF Viewer
+
+def designerPdfViewer(h, word):
+  height = 0
+  for i in word:
+    height = max(height, h[ord(i) - ord('a')])
+  return height*len(word) 
+  
+
+**Utopian Tree
+
+
+def utopianTree(n):
+  s = 0
+  for i in range(n+1) :
+    if i%2==0:
+      s +=1
+    else: 
+      s =s*2
+  
+  return s
+  
+  
+ **def angryProfessor(k, a):
+  result = []
+  for i in a:
+    if i<=0:
+      result.append(i)
+  if k <= len(result):
+    return 'NO'
+  else:
+     return 'YES'Angry Professor
+
 
   
   
