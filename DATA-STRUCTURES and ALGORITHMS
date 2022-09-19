@@ -1044,6 +1044,34 @@ for p in itertools.permutations(range(1,10)):
 print(min_cost)
   
   
+**Picking Numbers
+
+from collections import Counter
+def pickingNumbers(a):
+  arr = Counter(a)
+  max_num = 0
+  for i in range(100):
+    max_num = max(max_num, arr[i]+arr[i+1])
+  return max_num
+  
+** Climbing the Leaderboard
+
+def climbingLeaderboard(ranked, player):
+  scores = list(set(ranked))
+  scores.sort()
+  n = len(scores)
+  i = 0
+  result = []
+  
+  for j in player:
+    while i<n and scores[i]<=j:
+      i +=1
+    result.append(n-i+1)
+  return result
+
+
+
+  
   
   
   
