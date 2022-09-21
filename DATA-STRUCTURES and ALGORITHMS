@@ -1116,7 +1116,30 @@ def utopianTree(n):
   else:
      return 'YES'Angry Professor
 
+**Beautiful Days at the Movies
 
+def beautifulDays(i, j, k):
+  count = 0
+  for i in range(i,j+1):
+    rev = int(str(i)[::-1])
+    if abs(i - rev) %k == 0:
+      count+=1
+  return count
+
+**Viral Advertising
+
+def viralAdvertising(n):
+  sum_likes = 0
+  share = 5
+  
+  for i in range(n):
+    likes = math.floor(share/2)
+    sum_likes += likes
+    share = likes * 3
+    
+  return sum_likes
+  
+  
   
   
   
