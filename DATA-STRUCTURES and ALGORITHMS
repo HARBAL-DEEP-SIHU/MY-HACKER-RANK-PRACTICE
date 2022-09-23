@@ -1192,6 +1192,64 @@ def saveThePrisoner(p , s, c):
   return count
   
   
+** Extra Long Factorials
+
+def extraLongFactorials(n):
+  fact = 1
+  for i in range(1,n+1):
+    fact *= i
+  print(fact)
+  
+  
+** Append and Delete
+
+def appendAndDelete(s, t, k):
+  count = 0
+  for i,j in zip(s,t):
+    if i == j:
+      count+= 1
+    else:
+      break
+  t_len = len(s) + len(t)
+  if t_len <= 2*count + k and t_len%2 == k%2 or t_len < k:
+    return('Yes')
+  else:
+    return 'No'
+    
+    
+ ** Sherlock and Squares
+ 
+ def squares(a, b):
+  return math.floor(math.sqrt(b)) - (math.ceil(math.sqrt(a))) +1
+
+**Library Fine
+
+def libraryFine(d1, m1, y1, d2, m2, y2):
+  total = 0
+  if y1>y2:
+    total += 10000
+  elif y1==y2 and m1>m2:
+    total += 500 * (m1-m2)
+  elif y1==y2 and m1 ==m2 and d1>d2:
+    total += 15 *(d1-d2)
+
+  return total    
+  
+ **Cut the sticks
+ 
+ from collections import Counter
+def cutTheSticks(arr):
+  res = []
+  n = len(arr)
+  s = Counter(arr)
+  for i in sorted(s.keys()):
+    res.append(n)
+    n -= s[i]
+  return res
+  
+  
+ 
+  
   
   
   
