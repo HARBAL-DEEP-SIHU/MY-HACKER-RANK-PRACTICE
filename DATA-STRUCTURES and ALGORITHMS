@@ -1248,6 +1248,24 @@ def cutTheSticks(arr):
   return res
   
   
+ **Repeated String
+ 
+ def repeatedString(s, n):
+  count = 0
+  l = len(s)
+
+  for i in s:
+    if i =='a':
+      count+=1
+   
+  count = n//l *count
+
+  for i in s[:n%l]:
+    if i == 'a':
+      count+=1
+  
+  return count
+  
  
   
   
