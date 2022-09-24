@@ -1266,6 +1266,18 @@ def cutTheSticks(arr):
   
   return count
   
+ **Jumping on the Clouds
+  def jumpingOnClouds(c):
+  jump = 0
+  i = 0
+  while i < n-1:
+    if i+2 < n and c[i+2] == 0:
+      jump +=1
+      i+=2
+    if i+1 < n and c[i+1] == 0:
+      jump +=1
+      i +=1
+  return jump
  
   
   
