@@ -1267,18 +1267,99 @@ def cutTheSticks(arr):
   return count
   
  **Jumping on the Clouds
-  def jumpingOnClouds(c):
-  jump = 0
-  i = 0
-  while i < n-1:
-    if i+2 < n and c[i+2] == 0:
-      jump +=1
-      i+=2
-    if i+1 < n and c[i+1] == 0:
-      jump +=1
-      i +=1
-  return jump
+  
+  def jump(c):
+    res = 0
+    ind = 0
+    
+    while ind != len(c)-1:
+        if ind != len(c)-2 and c[ind+2] == 0:
+            ind += 2
+        else:
+            ind += 1
+        res += 1
+        
+    return res
+    
+  ** Equalize the Array
+  
+  from collections import Counter
+def equalizeArray(arr):
+  c = Counter(arr)
+  return len(arr) - max(c.values())
+  
+ **ACM ICPC Team
  
+ def acmTeam(topic):
+  maxsub = 0
+  count = 0
+  for i in range(n):
+    for j in range(i,n):
+      sub = 0
+      for x, y in zip(topic[i] , topic[j]):
+        if x== '1' or y == '1':
+          sub+=1
+      print(sub)
+      if sub > maxsub:
+        maxsub = sub
+        count  = 1
+      elif maxsub == sub: 
+        count +=1
+  return [maxsub ,count] 
+  
+** Taum and B'day
+
+def taumBday(b, w, bc, wc, z):
+  return min(b*bc + w*wc , bc*(w+b) + (w*z) , (wc*(b+w)) + b*z)
+  
+
+**Organizing Containers of Balls
+def organizingContainers(container):
+  row = [0] * n
+  col = [0] * n
+  for i in range(n):
+    for j in range(n):
+      row[i] += container[i][j]
+      col[i] += container[j][i]
+  if sorted(row) == sorted(col):
+    return 'Possible'
+  else:
+    return 'Impossible'  
+    
+ **Encryption   
+ 
+ def encryption(s):
+  l = len(s)
+  row = math.floor(math.sqrt(l))
+  col = math.ceil(math.sqrt(l))
+  result = []
+  
+  for i in range(col):
+    temp = [] 
+    j = 0
+    while i+j < l:
+      temp.append(s[i+j])
+      j += col
+    result.append("" . join(temp))
+  return ' '.join(result) 
+  
+  
+** Modified Kaprekar Numbers
+
+def kaprekarNumbers(p, q):
+  result = []
+  for i in range(p,q+1):
+    s = str(i*i)
+    n = len(s)
+    if i ==1:
+      result.append(i)
+    elif n>1 and i == int(s[:n//2]) + int(s[n//2:]):
+      result.append(i)
+  if len(result) == 0 :
+    print('INVALID RANGE')
+  else:
+    print(*result)
+
   
   
   
