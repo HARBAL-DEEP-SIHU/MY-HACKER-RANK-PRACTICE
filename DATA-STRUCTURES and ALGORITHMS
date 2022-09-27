@@ -1384,6 +1384,50 @@ def minimumDistances(a):
   else:
     return -1
     
+    
+**Halloween Sale
+
+def howManyGames(p, d, m, s):
+  games = 0
+  while p<=s:
+    s -=p
+    p = max(p-d , m)
+    games += 1
+  return games
+  
+  
+ **Chocolate Feast
+ 
+ def chocolateFeast(n, c, m):
+  choco = n//c
+  wraps = choco
+  while wraps >=m:
+    choco += wraps//m
+    wraps = wraps //m + wraps%m
+  return choco
+  
+  
+ ** Service Lane
+ 
+ def serviceLane(n, cases):
+  result = []
+  for i,j in cases:
+    result.append(min(width[i:j+1]))
+  return result
+  
+  
+** Lisa's Workbook
+
+def workbook(n, k, arr):
+  count = 0
+  page = 1
+  for i in arr:
+    for j in range(1,i+1):
+      if j == page:
+        count+=1
+      if i == j or j%k ==0:
+        page+=1
+  return count
    
   
   
