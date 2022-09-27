@@ -1360,6 +1360,17 @@ def kaprekarNumbers(p, q):
   else:
     print(*result)
 
+** Beautiful Triplets
+
+from collections import Counter
+def beautifulTriplets(d, arr):
+  n = Counter(arr)
+  count = 0
+  for i in arr:
+    if n[i + d] and n[ i + d + d]:
+      count +=1
+  return count
+  
   
   
   
