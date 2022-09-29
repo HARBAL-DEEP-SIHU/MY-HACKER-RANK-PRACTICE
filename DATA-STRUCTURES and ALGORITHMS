@@ -1524,6 +1524,35 @@ def happyLadybugs(b):
   else:
     return ''.join(result)
     
+   
+ **CamelCase
+ def camelcase(s):
+  count = 1
+  for i in s:
+    if i.isupper():
+      count+=1
+  return count
+
+
+**Strong Password
+
+def minimumNumber(n, password):
+  special = "!@#$%^&*()-+" 
+  l =[0,0,0,0]
+  
+  for i in password:
+    if i.isdigit():
+      l[0] =1
+    elif i.isupper():
+      l[1] =1
+    elif i.islower():
+      l[2]=1
+    elif i in special:
+      l[3] = 1
+    
+  return max(6-len(password ), 4 - sum(l))
+    
+    
     
    
     
