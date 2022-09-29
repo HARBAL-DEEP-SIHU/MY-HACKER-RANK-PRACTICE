@@ -1465,7 +1465,39 @@ def cavityMap(grid):
   return (''.join(x)for x in grid)
 
     
+  ** Manasa and Stones
+  
+  def stones(n, a, b):
+  result = set()
+  if a>b:
+    a,b = b,a
+  for i in range(n):
+    result.add(i*a + (n-1 -i)*b)
+  return sorted(list(result))
+
+**Happy Ladybugs
+
+from collections import Counter
+def happyLadybugs(b):
+  bugs = Counter(b)
+  for i, j in bugs.items():
+    if i != "_" and j ==1:
+      return 'NO'
+      
+  if bugs['_'] > 0:
+    return 'YES'
+  else:
+    pair = 0
+    for i in range(len(b) - 1):
+      if b[i] == b[i+1]:
+        pair+=1
+      elif pair>0:
+        pair = 0
+      else:
+        return 'NO'
+    return 'YES'
     
+   
   
   
   
