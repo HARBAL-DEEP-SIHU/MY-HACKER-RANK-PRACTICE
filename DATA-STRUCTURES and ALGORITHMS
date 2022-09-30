@@ -1551,6 +1551,36 @@ def minimumNumber(n, password):
       l[3] = 1
     
   return max(6-len(password ), 4 - sum(l))
+  
+** Two Characters
+
+def alternate(s):
+  maxnum = count = 0
+  a = list(set(s))
+  for i in range(len(a)):
+    for j in range(i+1 , len(a)):
+      l = [a[i] , a[j]]
+      
+      if s.index(a[i]) < s.index(a[j]):
+        ind = 0
+      else:
+        ind = 1 
+        
+      for char in s:
+        if char in l:
+          if char == l[ind]:
+            count += 1
+            ind = ind ^ 1
+          else:
+            count = 0
+            break
+          
+      maxnum = max(maxnum , count)
+      count = 0
+  return maxnum
+
+
+
     
     
     
