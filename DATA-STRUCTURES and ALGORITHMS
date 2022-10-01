@@ -1593,6 +1593,37 @@ def caesarCipher(s, k):
     elif 97 <= temp[i] <=122:
       temp[i] = (97 + (temp[i] -97 +k)%26)
   return (''.join(map(chr, temp))) 
+  
+  
+  **Mars Exploration
+  
+  
+  def marsExploration(s):
+  result =[]
+  count = 0
+  for i in range((len(s)//3)):
+    result.append('SOS')
+  ans = ''.join(result)
+
+  for i,j in zip(s,ans):
+    if i!=j:
+      count+=1
+  return count
+ 
+ 
+** HackerRank in a String!
+
+def hackerrankInString(s):
+  target = 'hackerrank'
+  n = len(target)
+  i = 0
+  for char in s:
+    if char == target[i]:
+      i+=1
+      if i ==n:
+        return 'YES'
+  return 'NO'
+
 
       
  
