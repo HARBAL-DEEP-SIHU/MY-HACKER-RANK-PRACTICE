@@ -1623,6 +1623,18 @@ def hackerrankInString(s):
       if i ==n:
         return 'YES'
   return 'NO'
+  
+** Pangrams
+
+def pangrams(s):
+  test = set(s.lower())-set(' ')
+
+  if len(test) == 26:
+    return 'pangram'
+  else:
+      return 'not pangram'
+      
+      
 
 
       
