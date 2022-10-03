@@ -1634,6 +1634,75 @@ def pangrams(s):
   else:
       return 'not pangram'
       
+** Weighted Uniform Strings
+
+def weightedUniformStrings(s, queries):
+  result = []
+  d= {}
+  weight = 0
+  for i in range(len(s)):
+    if i ==0 or s[i] != s[i-1]:
+      weight = ord(s[i]) - ord('a') + 1
+    else:
+      weight = weight +   ord(s[i]) - ord('a') + 1
+    d[weight] =2
+  for q in queries:
+    result.append('Yes' if q in d else 'No') 
+  return result
+    
+
+
+**Separate the Numbers
+
+def separateNumbers(s):
+  if len(s) == 1:
+    print('NO')
+    return
+  else:
+    for i in range(1, len(s) // 2 +1):
+      g = s[:i]
+      prev = int(g)
+      while len(g) < len(s):
+        next = prev +1 
+        g = g + str(next)
+        prev = next
+        
+      if g == s:
+        print('YES' , s[:i])
+        return
+    print('NO')
+    
+  ** Funny String
+  
+  def funnyString(s):
+  rev = s[::-1]
+  for i in range(1, len(s)):
+    if abs(ord(s[i]) - ord(s[i-1])) != abs(ord(rev[i]) - ord(rev[i-1])):
+      return 'Not Funny'
+    
+  return 'Funny'
+
+**Gemstones
+
+def gemstones(arr):
+  result = set(arr[0])
+  for i in range(1,len(arr)):
+    temp = set(arr[i])
+    result = result.intersection(temp)
+  return len(result)
+    
+    
+** Alternating Characters
+def alternatingCharacters(s):
+  count = 0
+  for i in range(len(s)-1):
+    if ord(s[i]) - ord(s[i+1]) == 0:
+      i = i+1
+      count +=1
+  return count
+  
+  
+      
       
 
 
