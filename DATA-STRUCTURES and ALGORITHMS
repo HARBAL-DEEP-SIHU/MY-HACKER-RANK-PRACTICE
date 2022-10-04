@@ -1724,6 +1724,60 @@ def beautifulBinaryString(b):
   return count
       
       
+ ** Palindrome Index
+ 
+ def palindromeIndex(s):
+  if s ==s[::-1]:
+    return -1
+    
+  for i in range(len(s)//2):
+    
+    if s[i] != s[len(s) - i -1]:
+      if s[i:len(s) - i -1] == s[i: len(s) - i -1][::-1]:
+        return (len(s) - i -1)
+      elif s[i+1: len(s) - i] == s[i+1:len(s) - i][::-1]:
+        return i
+    
+  return -1
+  
+ ** Anagram
+ 
+ from collections import Counter
+def anagram(s):
+  n = len(s)
+  if n%2==1:
+    return -1
+  s = Counter(s[:n//2]) - Counter(s[n//2:])
+  return sum(s.values())
+  
+ ** Making Anagrams
+ 
+ from collections import Counter
+def makingAnagrams(s1, s2):
+  total = len(s1) + len(s2)
+  set1 = Counter(s1)
+  set2 = Counter(s2)
+  inter1 = set1 - set2
+  inter2 = set2 - set1 
+  ans1 = sum(inter1.values())
+  ans2 = sum(inter2.values())
+  return ans1 + ans2
+  
+ ** Game of Thrones - I
+ 
+ from collections import Counter
+def gameOfThrones(s):
+  total = 0
+  s= Counter(s)
+  for key,values in s.items():
+    total += values%2
+  if total>1:
+    return 'NO'
+  else:
+    return 'YES'
+  
+ 
+      
 
 
       
