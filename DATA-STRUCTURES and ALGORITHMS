@@ -1702,6 +1702,26 @@ def alternatingCharacters(s):
   return count
   
   
+  
+** Beautiful Binary String
+
+def beautifulBinaryString(b):
+  count = 0
+  b=list(b)
+  for i in range(len(b)-2):
+    if b[i] == '0' and b[i+1] == '1' and b[i+2] == '0':
+      count +=1
+      b[i+2] = '1'   
+  return count
+  
+  
+ ** The Love-Letter Mystery
+ 
+ def theLoveLetterMystery(s):
+  count = 0
+  for i in range((len(s)//2)):
+    count += abs(ord(s[i] ) -  ord(s[len(s) - 1 - i]))
+  return count
       
       
 
