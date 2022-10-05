@@ -1798,6 +1798,36 @@ def twoStrings(s1, s2):
 def bigSorting(unsorted):
   unsorted.sort(key = lambda x: (len(x) , x))
   return unsorted
+  
+ **Intro to Tutorial Challenges
+ 
+ def introTutorial(V, arr):
+  return arr.index(V)
+  
+** Insertion Sort - Part 1
+
+def insertionSort1(n, arr):
+  temp = arr[n-1]
+  i = n-1
+  while i>0 and arr[i-1] >temp:
+    arr[i] = arr[i-1]
+    print(*arr)
+    i -=1
+  arr[i] = temp
+  print(*arr)
+  
+**Insertion Sort - Part 2  
+  
+  
+  def insertionSort2(n, arr):
+  for j in range(1,n):
+    key = arr[j]
+    i = j
+    while i>0 and arr[i-1]>key:
+      arr[i] = arr[i-1]
+      i-=1
+    arr[i] = key
+    print(*arr)
 
       
  
