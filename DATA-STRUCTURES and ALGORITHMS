@@ -1934,6 +1934,57 @@ def missingNumbers(arr, brr):
   d2 = Counter(brr)
   ans = d2 - d1
   return sorted(ans.keys())
+  
+ ** Sherlock and Array
+ 
+ def balancedSums(arr):
+  right = sum(arr)
+  left = 0
+  for i in arr:
+    right -= i
+    if left == right:
+      return 'YES'
+    left += i
+  return 'NO'
+
+**Minimum Absolute Difference in an Array
+ 
+ def minimumAbsoluteDifference(arr):
+  arr.sort()
+  diff = sys.maxsize
+  for i in range(1,len(arr)):
+    diff = min (diff , abs(arr[i-1] - arr[i]))
+  return diff
+
+
+**Marc's Cakewalk
+
+def marcsCakewalk(calorie):
+  calorie.sort(reverse =True)
+  n = len(calorie)
+  summ = 0
+  
+  for i in range(n):
+    ans = (2**i)*calorie[i]
+    summ += ans
+  return summ  
+  
+  
+ ** Grid Challenge
+ def gridChallenge(grid):
+  grid = [list(row) for row in grid]
+  r= len(grid)
+  c = len(grid[0])
+  for i in range(r):
+    grid[i].sort()
+ 
+  for j in range(c):
+    for i in range(1,r):
+      if not grid[i-1][j] <= grid[i][j]:
+        
+        return 'NO'     
+  return 'YES'
+ 
  
 
 
