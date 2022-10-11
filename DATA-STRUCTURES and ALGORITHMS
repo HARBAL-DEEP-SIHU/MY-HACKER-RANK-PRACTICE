@@ -1984,7 +1984,37 @@ def marcsCakewalk(calorie):
         
         return 'NO'     
   return 'YES'
- 
+  
+ ** Luck Balance
+ def luckBalance(k, contests):
+  contest = {}
+  for i,j in contests:
+    if j not in contest:
+      contest[j] = [i]
+    else:
+      contest[j].append(i)
+  
+  result = 0
+  if 0 in contest:
+    result = sum(contest[0])
+  if 1 in contest:
+    s = sorted(contest[1] , reverse = True)
+    result += sum(s[:k])
+    result -= sum(s[k:])
+  return result
+  
+**  Maximum Perimeter Triangle
+
+def maximumPerimeterTriangle(s):
+  s.sort()
+  i = len(sticks) - 3
+  while i>=0 and s[i] +s[i+1] <= s[i+2]:
+    i -=1
+  if i>=0:
+    return (s[i],s[i+1],s[i+2])
+  else:
+    return ([-1])
+    
  
 
 
