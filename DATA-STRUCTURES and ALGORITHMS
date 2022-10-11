@@ -2015,6 +2015,38 @@ def maximumPerimeterTriangle(s):
   else:
     return ([-1])
     
+    
+ **Beautiful Pairs
+ 
+ from collections import Counter
+def beautifulPairs(A, B):
+  a = Counter(A)
+  b = Counter(B)
+  b_set = 0
+  for i in a:
+    if i in b:
+      b_set +=  min(a[i] , b[i])
+      
+  if b_set == len(A):
+    return b_set - 1
+  else:
+    return b_set +1
+    
+    
+**Sherlock and The Beast
+
+def decentNumber(n):
+  m = n
+  while m%3 != 0:
+    m -=5
+  if m<0:
+    print(-1)
+  else:
+    print('5'*m , '3'*(n-m) , sep='')
+
+    
+    
+    
  
 
 
