@@ -2061,7 +2061,21 @@ def decentNumber(n):
   
  **Largest Permutation
  
- 
+ def largestPermutation(k, arr): 
+  index = {}
+  n = len(arr)
+  for  i in range(n):
+    index[arr[i]] =i
+  swaps = i = 0
+  while swaps < k and i<n:
+    if arr[i] < n-i:
+      idx = index[n-i]
+      arr[i] , arr[idx] = arr[idx] ,arr[i]
+      index[arr[idx]] = idx
+      index[n-i] =i
+      swaps +=1
+    i += 1
+  return arr
 
     
     
