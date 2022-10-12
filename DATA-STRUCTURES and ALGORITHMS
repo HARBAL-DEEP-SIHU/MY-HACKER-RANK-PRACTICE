@@ -2091,6 +2091,32 @@ def decentNumber(n):
   return count
   
   
+**Jim and the Orders
+
+def jimOrders(orders):
+  d= {}
+  for i in range(len(orders)):
+    s = sum(orders[i])
+    if s not in d:
+      d[s] = [i+1]
+    else:
+      d[s].append(i+1)
+  result = []
+  for  s in sorted(d.keys()):
+    result.extend(d[s])
+  return result
+  
+ ** Permuting Two Arrays
+ 
+ def twoArrays(k, A, B):
+  A.sort()
+  B.sort(reverse = True)
+  for i in range(len(A)):
+    if A[i] + B[i] <k:
+      return 'NO'
+  return 'YES'
+  
+  
 
     
  
