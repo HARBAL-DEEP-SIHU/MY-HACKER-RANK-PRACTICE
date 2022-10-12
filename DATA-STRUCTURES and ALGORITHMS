@@ -2043,6 +2043,25 @@ def decentNumber(n):
     print(-1)
   else:
     print('5'*m , '3'*(n-m) , sep='')
+    
+ ** Priyanka and Toys
+ 
+ def toys(w):
+  w.sort()
+  max_weight = w[0] +4
+  count = 0 
+  for i in w:
+    if i <= max_weight:
+      continue
+    count +=1
+    max_weight = i +4
+  count +=1
+  return count
+  
+  
+ **Largest Permutation
+ 
+ 
 
     
     
