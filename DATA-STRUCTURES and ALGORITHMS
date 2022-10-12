@@ -2078,7 +2078,20 @@ def decentNumber(n):
   return arr
 
     
-    
+** Mark and Toys
+
+  def maximumToys(prices, k):
+  s = 0
+  count = 0
+  prices.sort()
+  for i in range(len(prices)):
+    s+= prices[i]
+    if s <= k:
+       count += 1
+  return count
+  
+  
+
     
  
 
