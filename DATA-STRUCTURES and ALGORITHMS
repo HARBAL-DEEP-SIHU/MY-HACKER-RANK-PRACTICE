@@ -2116,7 +2116,41 @@ def jimOrders(orders):
       return 'NO'
   return 'YES'
   
+  **Lonely Integer
   
+  def lonelyinteger(a):
+  result = 0
+  for i in a:
+    result ^= i
+  return result
+  
+ ** Maximizing XOR
+ 
+ def maximizingXor(l, r):
+  result = []
+  for i in range(l,r+1):
+    for  j in range(l,r+1):
+      result.append(i^j)
+  
+  return max(result)
+  
+  
+**  Sum vs XOR
+
+def sumXor(n):
+  result = 1
+  while n:
+    b = n&1
+    n >>=1
+    if b ==0:
+      result *=2
+  return result
+  
+**  Flipping bits
+
+def flippingBits(n):
+  return(2**32)+(~n)
+
 
     
  
