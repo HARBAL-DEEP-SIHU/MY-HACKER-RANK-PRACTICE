@@ -2152,6 +2152,17 @@ def flippingBits(n):
   return(2**32)+(~n)
 
 
+**Game of Stones
+
+
+def gameOfStones(n):
+  
+  if n%7<2:
+    return 'Second'
+  else:
+    return 'First'
+    
+
     
  
 
