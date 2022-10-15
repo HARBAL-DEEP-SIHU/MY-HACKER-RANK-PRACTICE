@@ -2183,6 +2183,15 @@ def gameOfStones(n):
   else:
     return 'Second'
     
+ ** Introduction to Nim Game
+ from functools import reduce
+def nimGame(pile):
+  if reduce(lambda x,y: x^y , pile) == 0:
+    return 'Second'
+  else:
+    return 'First'
+    
+    
     
  
 
