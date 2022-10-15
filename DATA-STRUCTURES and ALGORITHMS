@@ -2175,6 +2175,14 @@ def gameOfStones(n):
       else:
         return('1')
 
+  **A Chessboard Game
+  
+  def chessboardGame(x, y):
+  if x%4 ==0 or x%4 == 3 or y%4 ==0 or y%4==3:
+    return 'First'
+  else:
+    return 'Second'
+    
     
  
 
