@@ -2192,6 +2192,40 @@ def nimGame(pile):
     return 'First'
     
     
+ ** Misère Nim
+ 
+ def misereNim(n):
+  x=0
+  for i in s:
+    x ^= i
+  if len(set(s)) == 1 and 1 in s:
+    if x:
+      return('Second')
+    else:
+      return('First')
+  else:
+    if x:
+      return 'First'
+    else:
+      return "Second"
+      
+ ** Nimble Game
+ 
+ t = int(input().strip())
+for _ in range(t):
+    n = int(input().strip())
+    piles = list(map(int, input().strip().split(' ')))
+    xor_sum = 0
+    for n,pile in enumerate(piles):
+        if pile % 2 == 1:
+            xor_sum = xor_sum ^ n
+    if xor_sum == 0:
+        print('Second')
+    else:
+        print('First')
+	
+	
+    
     
  
 
