@@ -2184,6 +2184,7 @@ def gameOfStones(n):
     return 'Second'
     
  ** Introduction to Nim Game
+ 
  from functools import reduce
 def nimGame(pile):
   if reduce(lambda x,y: x^y , pile) == 0:
@@ -2223,6 +2224,42 @@ for _ in range(t):
         print('Second')
     else:
         print('First')
+	
+	
+**Poker Nim	
+
+def pokerNim(k, c):
+  score = 0
+  for i in c:
+    score = score ^ i
+    
+  if score == 0:
+    return 'Second'
+  else:
+    return 'First'
+    
+    
+ ** XOR Strings
+ 
+ def strings_xor(s, t):
+    res = ""
+    for i in range(len(s)):
+        if s[i] == t[i]:
+            res += '0';
+        else:
+            res += '1';
+
+    return res
+
+**Smart Number
+
+def is_smart_number(num):
+    val = int(math.sqrt(num))
+    if num / val == val:
+        return True
+    return False
+    
+
 	
 	
     
