@@ -2418,6 +2418,23 @@ def absolutePermutation(n, k):
     if abs(arr[i] - i) !=k:
       return [-1]
   return arr[1:]
+  
+ ** Tree: Huffman Decoding
+ 
+ def decodeHuff(root, s):
+  temp = root
+  result = []
+  for i in s:
+    if i == '0':
+      temp = temp.left
+    else:
+      temp = temp.right
+    if temp.left is None and temp.right is None:
+      result.append(temp.data)
+      temp = root
+  print (''.join(result))
+
+    
     
     
  
