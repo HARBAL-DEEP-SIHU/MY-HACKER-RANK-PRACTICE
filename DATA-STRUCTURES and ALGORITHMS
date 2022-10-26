@@ -2641,6 +2641,17 @@ def twoPluses(grid):
         r+=1
   return answer
             
+	    
+**Is This a Binary Search Tree?
+def check_binary_search_tree_(root):
+  def check(root, min_value , max_value):
+    if root is None:
+      return True
+    if min_value > root.data or max_value< root.data:
+      return False
+
+    return check(root.left , min_value , root.data - 1) and check (root.right, root.data+1 , max_value)
+  return check (root, 0 , 10000)
     
     
     
