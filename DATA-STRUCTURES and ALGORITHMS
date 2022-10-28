@@ -2654,6 +2654,23 @@ def check_binary_search_tree_(root):
   return check (root, 0 , 10000)
     
     
+ ** Larry's Array
+ 
+ def larrysArray(A):
+  s = 0
+  for i in range(n):
+    for j in range(i+1, n):     
+      if A[i] > A[j]:
+        s += 1
+  if s %2 ==0 :
+    return 'YES'
+  else:
+    return 'NO'
+
+**Almost Sorted
+
+
+    
     
  
 
