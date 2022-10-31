@@ -2755,6 +2755,24 @@ def minimumMoves(grid, startX, startY, goalX, goalY):
         else:
             break
   return -1
+  
+ **The Full Counting Sort
+ 
+ def countSort(arr):
+  result = [[] for i in range(100)]
+  for i in range(n//2):
+    result[int(arr[i][0])].append('-')
+  for  i in range(n//2,n):
+    result[int(arr[i][0])].append(arr[i][1])
+  for i in result:
+    if i:
+      print(*i , end= ' ')
+      
+ ** Insertion Sort Advanced Analysis
+ 
+ 
+
+ 
             
         
   
