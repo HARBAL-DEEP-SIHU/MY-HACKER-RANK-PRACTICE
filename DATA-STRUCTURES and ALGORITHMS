@@ -2786,6 +2786,25 @@ for _ in range(t):
         result += i - j
     print(result) 
 
+**Balanced Brackets
+
+def isBalanced(s):
+  stack = []
+  bracket = {'{' : '}' , '(' : ')' , '[' : ']' }
+  for i in s:
+    if i in ['{' , '(' , '[']:
+      stack.append(i)
+    else:
+      if stack:
+        top = stack.pop()
+        if bracket[top] != i:
+          return 'NO'
+      else:
+        return 'NO'
+  return 'NO' if stack else 'YES'      
+  
+  
+
 
 
 
