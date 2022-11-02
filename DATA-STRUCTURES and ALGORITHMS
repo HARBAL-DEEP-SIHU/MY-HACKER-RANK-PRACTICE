@@ -2837,6 +2837,27 @@ def isBalanced(s):
       prev = expenditure[i-d]
       dic[prev] -=1
   return result
+  
+ **Lily's Homework
+ 
+ def lilysHomework(arr):
+  def swaps(arr):
+    indexmap = {}
+    for i in range(n):
+      indexmap[arr[i]] = i
+    sorted_arr = sorted(arr)
+    result = 0
+    
+    for i in range(n):
+      if arr[i] != sorted_arr[i]:
+        result += 1
+        swap_index = indexmap[sorted_arr[i]]
+        indexmap[arr[i]] = swap_index
+        arr[i] , arr[swap_index] = arr[swap_index] , arr[i]
+    return result
+  normal_order = swaps(arr[::])
+  reverse_order = swaps(arr[::-1])
+  return min(normal_order , reverse_order)
           
   
 
