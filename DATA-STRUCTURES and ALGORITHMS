@@ -2858,6 +2858,9 @@ def isBalanced(s):
   normal_order = swaps(arr[::])
   reverse_order = swaps(arr[::-1])
   return min(normal_order , reverse_order)
+  
+  
+ ** Down to Zero II
           
   
 
