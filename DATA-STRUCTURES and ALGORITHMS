@@ -2897,7 +2897,28 @@ def downToZero(n):
       fuel = 0
   return position
 
-         
+**Sherlock and the Valid String
+
+from collections import Counter
+def isValid(s):
+  d = Counter(s)
+  if len(set(d.values())) == 1:
+    return 'YES'
+  elif len(set(d.values())) > 2:
+    return 'NO'
+  else:
+    for i in d:
+      d[i] -=1
+      temp = list(d.values())
+      try:
+        temp.remove(0)
+      except:
+        pass
+      if len(set(temp)) == 1:
+        return 'YES'
+      else:
+        d[i] += 1
+    return "NO"
 	  
   
 
