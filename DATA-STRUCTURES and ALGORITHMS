@@ -3069,6 +3069,25 @@ def sherlockAndAnagrams(s):
       result += d[sub] - 1
   return result
 
+**Simple Text Editor
+
+q = int(input())
+result = []
+string = ''
+for _ in range(q):
+  s = input().split() 
+  if s[0] == '1':
+    result.append(string)
+    string+=s[1]
+  elif s[0] == '2':
+    result.append(string)
+    string = string[: -int(s[1])]
+  elif s[0] == '3':
+    print(string[int(s[1]) - 1])
+  else:
+    string = result.pop()
+      
+      
   
 
 
