@@ -3121,6 +3121,25 @@ for _ in range(q):
       result.append(a[i].pop())
   return result
   
+ ** Common Child
+ 
+def commonChild(a,b):
+  prev_a = [0 for i in range(len(a) + 1)]
+  for i in range(len(a)):
+    new_a = [0]
+    for j in range(len(b)):
+      if a[i] == b[j]:
+        new_a.append(prev_a[j] + 1)
+      else:
+        new_a.append(max(new_a[-1] , prev_a[j+1]))
+    prev_a = new_a
+  return new_a[len(a)]
+a = input()
+b = input()
+print(commonChild(a,b))
+
+
+  
       
   
 
