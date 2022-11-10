@@ -3138,7 +3138,35 @@ a = input()
 b = input()
 print(commonChild(a,b))
 
+**Bear and Steady Gene
+from collections import Counter,defaultdict
+def steadyGene(gene) :
+    n = len(gene)
+    count = Counter(gene)
+    
+    for k,v in count.items():
+        count[k] = 0 if v <= n//4 else v-n//4
+    if not sum(count.values()): return 0
 
+    count += Counter()
+    count2 = Counter()
+    j = 0
+    
+    i, j, k = 0, 0, n
+
+    while j<n:
+        while j<n and count2 & count != count:
+            count2[gene[j]]+=1
+            j+=1
+        while all(count2[c]>=count[c] for c in count):
+            count2[gene[i]]-=1
+            i+=1
+        k = min(k,j-i+1)
+    return k
+    
+n = int(input())
+gene = input()
+print(steadyGene(gene))
   
       
   
