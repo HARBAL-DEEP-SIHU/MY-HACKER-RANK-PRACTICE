@@ -3227,6 +3227,22 @@ while numLines > 0 :
     elif command[0]=='f' :
         a.findName(command[5:])
     numLines -= 1
+    
+  **Xor-sequence
+  
+def xorSequence(l, r):
+  def fun(number):
+    n = number % 8
+    if n== 0 or n== 1:
+      return number
+    elif n == 2 or n == 3:
+      return 2
+    elif n == 4 or n == 5:
+      return number + 2
+    else:
+      return 0
+  return fun(r) ^ fun(l-1)
+
   
 
 
