@@ -3243,7 +3243,7 @@ def xorSequence(l, r):
       return 0
   return fun(r) ^ fun(l-1)
 
-  
+  **The Great XOR
 
 
 
