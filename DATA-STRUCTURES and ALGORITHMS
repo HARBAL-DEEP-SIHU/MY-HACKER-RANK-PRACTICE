@@ -3250,6 +3250,17 @@ def xorSequence(l, r):
   value = 2**bit_length - 1
   return value - x
 
+**Sansa and XOR
+
+def sansaXor(arr):
+  result = 0
+  if len(arr) %2 == 0:
+    return 0
+  else:
+    for i in range(0, len(arr) , 2):
+      result = result ^ arr[i]
+    return result
+      
 
 
 
