@@ -3261,7 +3261,7 @@ def sansaXor(arr):
       result = result ^ arr[i]
     return result
       
-      harbal deep sidhu
+      
      
 
 
