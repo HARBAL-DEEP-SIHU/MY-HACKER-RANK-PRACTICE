@@ -3271,7 +3271,31 @@ def sansaXor(arr):
   result &= b 
   return result
   
-     
+ ** Winning Lottery Ticket
+
+def winningLotteryTicket(tickets):
+  digits = '0123456789'
+  pairs = [0] * 1024
+  result = 0
+  for ticket in tickets:
+    bin_num = ''
+    for digit in digits:
+      if digit in ticket:
+        bin_num += '1'
+      else:
+        bin_num += '0'
+    num = int(bin_num , 2)
+    pairs[num] += 1
+  
+  for i1 , p1 in enumerate(pairs[:1023]):
+    if p1 > 0:
+      for i2 in range(i1 + 1 , 1024):
+        if (i1|i2) == 1023:
+          result += pairs[i1] * pairs[i2]
+          
+  result += (pairs[1023] * (pairs[1023] - 1)) //2
+  return result
+ 
 
 
 
