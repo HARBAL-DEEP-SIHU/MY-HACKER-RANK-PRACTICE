@@ -3261,9 +3261,18 @@ def sansaXor(arr):
       result = result ^ arr[i]
     return result
       
-      
+  **AND Product  
+  def andProduct(a, b):
+  result = a
+  i = 0
+  while a + (2**i) < b:
+    result &= a + (2**i)
+    i += 1
+  result &= b 
+  return result
+  
      
-harbal deep sidhu
+
 
 
 
