@@ -3329,6 +3329,28 @@ def findPrimeDates(d1, m1, y1, d2, m2, y2):
                 y1 =  y1 + 1
                 m1 = m1 - 12
     return result;
+    
+  **Zig Zag Sequence
+  
+  def findZigZagSequence(a, n):
+    a.sort()
+    mid = int((n + 1)/2)-1
+    a[mid], a[n-1] = a[n-1], a[mid]
+
+    st = mid + 1
+    ed = n - 2
+    while(st <= ed):
+        a[st], a[ed] = a[ed], a[st]
+        st = st + 1
+        ed = ed - 1
+
+    for i in range (n):
+        if i == n-1:
+            print(a[i])
+        else:
+            print(a[i], end = ' ')
+    return
+
 
 
 
