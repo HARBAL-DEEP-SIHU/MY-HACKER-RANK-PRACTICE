@@ -3361,6 +3361,22 @@ def powerSum(X, N):
       return 0
     return helper(val , power , num+1) + helper(total , power, num+1)
   return helper(X,N,1)
+  
+  **Recursive Digit Sum
+  
+def superDigit(n, k):
+  def helper(n):
+    total = 0
+    for num in n:
+      total += int(num)
+    total = str(total)
+    if len(total) == 1:
+      return total
+    else:
+      return helper(total)
+  p = str(helper(n) * k)
+  return helper(p)
+  
 
 
 
