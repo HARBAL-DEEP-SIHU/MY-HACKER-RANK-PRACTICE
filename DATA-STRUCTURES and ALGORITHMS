@@ -3351,6 +3351,16 @@ def findPrimeDates(d1, m1, y1, d2, m2, y2):
             print(a[i], end = ' ')
     return
 
+**The Power Sum
+def powerSum(X, N):
+  def helper(total , power , num):
+    val = total - num**power
+    if val == 0:
+      return 1
+    if val<0:
+      return 0
+    return helper(val , power , num+1) + helper(total , power, num+1)
+  return helper(X,N,1)
 
 
 
