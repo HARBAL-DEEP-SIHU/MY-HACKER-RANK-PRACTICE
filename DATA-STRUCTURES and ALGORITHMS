@@ -3377,7 +3377,42 @@ def superDigit(n, k):
   p = str(helper(n) * k)
   return helper(p)
   
+**Password Cracker
 
+sys.setrecursionlimit(10**8)
+def passwordCracker(passwords, loginAttempt):
+  memo = {}
+  
+  def match(source , target , i):
+    for x,y in zip(source[i:] , target):
+      if x!= y:
+        return False
+    return True
+  
+  def helper(newPassword , passwordList , i):
+    if newPassword == loginAttempt:
+      return ' '.join(passwordList)
+    if i > len(loginAttempt):
+      return 'WRONG PASSWORD'
+      
+    for password in passwords:
+      if loginAttempt[i] == password[0]:
+        if match(loginAttempt , password , i):
+          if newPassword+ password in memo:
+            continue
+          updatedPassword = newPassword + password
+          updatedPasswordList = passwordList + [password]
+          result = helper(updatedPassword , updatedPasswordList , i + len(password))
+          memo[updatedPassword] = 1
+          
+          if result != 'WRONG PASSWORD':
+            return result 
+    return 'WRONG PASSWORD'
+    
+  if set(loginAttempt).intersection(set(''.join(passwords))) == set(loginAttempt):
+    return helper('' , [] , 0)
+  else:
+    return 'WRONG PASSWORD'
 
 
 
